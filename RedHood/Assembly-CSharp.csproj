@@ -45,15 +45,48 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraFollowingBehaviour.cs" />
+     <Compile Include="Assets\Scripts\GUI\BonusIcon.cs" />
+     <Compile Include="Assets\Scripts\GUI\EvilModeBar.cs" />
+     <Compile Include="Assets\Scripts\GUI\HealthBar.cs" />
+     <Compile Include="Assets\Scripts\GUI\UITKControl.cs" />
+     <Compile Include="Assets\Scripts\GUI\UITKSprite.cs" />
+     <Compile Include="Assets\Scripts\GUI\UIToolkitCommonAssets.cs" />
      <Compile Include="Assets\Scripts\PlayerMovementController.cs" />
      <Compile Include="Assets\Scripts\RidingHoodWanderingBehaviour.cs" />
      <Compile Include="Assets\TerrainToolkit\TerrainToolkit.cs" />
+     <Compile Include="Assets\Toolkit examples\DemoSceneScripts\ColorPickerManager.cs" />
+     <Compile Include="Assets\Toolkit examples\DemoSceneScripts\ExtendedTextManager.cs" />
+     <Compile Include="Assets\Toolkit examples\DemoSceneScripts\FPSHUD.cs" />
+     <Compile Include="Assets\Toolkit examples\DemoSceneScripts\JoystickManager.cs" />
+     <Compile Include="Assets\Toolkit examples\DemoSceneScripts\KitchenSinkManager.cs" />
+     <Compile Include="Assets\Toolkit examples\DemoSceneScripts\LayoutContainerManager.cs" />
+     <Compile Include="Assets\Toolkit examples\DemoSceneScripts\MultipleAtlasManager.cs" />
+     <Compile Include="Assets\Toolkit examples\DemoSceneScripts\PanelManager.cs" />
+     <Compile Include="Assets\Toolkit examples\DemoSceneScripts\PositioningManager.cs" />
+     <Compile Include="Assets\Toolkit examples\DemoSceneScripts\ScrollableContainerManager.cs" />
+     <Compile Include="Assets\Toolkit examples\DemoSceneScripts\ScrollableHorizontalContainerManager.cs" />
+     <Compile Include="Assets\Toolkit examples\DemoSceneScripts\StateButtonManager.cs" />
+     <Compile Include="Assets\Toolkit examples\DemoSceneScripts\SwipeManager.cs" />
+     <Compile Include="Assets\Toolkit examples\DemoSceneScripts\TextManager.cs" />
      <Compile Include="Assets\iTween\Plugins\iTween.cs" />
      <Compile Include="Assets\iTween\Sample\MoveSample.cs" />
      <Compile Include="Assets\iTween\Sample\RotateSample.cs" />
      <Compile Include="Assets\iTween\Sample\SampleInfo.cs" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\textDemoSheet2x.txt" />
+     <None Include="Assets\Plugins\UIToolkit\Shaders\UIToolkit Premultiplied Alpha.shader" />
+     <None Include="Assets\GUI_Aseets\GUI\level_gui.txt" />
      <None Include="Assets\iTween\ReadMe!\ReadMe!.txt" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\colorPickerSheet.txt" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\joystickSheet.txt" />
+     <None Include="Assets\Plugins\UIToolkit\Shaders\UIToolkit Alpha Enabled (Default).shader" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\kitchenSinkSheet.txt" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\joystickSheet2x.txt" />
+     <None Include="Assets\Plugins\UIToolkit\Shaders\UIToolkit No Alpha.shader" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\textDemoSheet.txt" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\prototype.txt" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\kitchenSinkSheet2x.txt" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\prototype2x.txt" />
      <None Include="Assets\TerrainToolkit\Read me.txt" />
   </ItemGroup>
   <ItemGroup>

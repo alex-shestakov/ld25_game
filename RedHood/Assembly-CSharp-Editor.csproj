@@ -45,8 +45,21 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\TerrainToolkit\Editor\TerrainToolkitEditor.cs" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\textDemoSheet2x.txt" />
+     <None Include="Assets\Plugins\UIToolkit\Shaders\UIToolkit Premultiplied Alpha.shader" />
+     <None Include="Assets\GUI_Aseets\GUI\level_gui.txt" />
      <None Include="Assets\iTween\ReadMe!\ReadMe!.txt" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\colorPickerSheet.txt" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\joystickSheet.txt" />
+     <None Include="Assets\Plugins\UIToolkit\Shaders\UIToolkit Alpha Enabled (Default).shader" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\kitchenSinkSheet.txt" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\joystickSheet2x.txt" />
+     <None Include="Assets\Plugins\UIToolkit\Shaders\UIToolkit No Alpha.shader" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\textDemoSheet.txt" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\prototype.txt" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\kitchenSinkSheet2x.txt" />
+     <None Include="Assets\Toolkit examples\DemoAssets\Resources\prototype2x.txt" />
      <None Include="Assets\TerrainToolkit\Read me.txt" />
   </ItemGroup>
   <ItemGroup>
