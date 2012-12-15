@@ -2,14 +2,22 @@ using UnityEngine;
 using System.Collections;
 
 public class RidingHoodPanicBehaviour : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
 	
+	public float fleeForce = 10f;
+	
+	private Transform targetTransform;
+	private Transform parentTransform;
+	private Rigidbody parentBody;
+	
+	void Start () {
+		targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
+		parentTransform = transform.parent.transform;
+		parentBody = transform.parent.rigidbody;
 	}
 	
-	// Update is called once per frame
 	void Update () {
-	
+		Vector3 fleeDirection = parentTransform.position - targetTransform.position;
+		fleeDirection.Normalize();
+		parentBody.AddForce(fleeDirection * fleeForce);
 	}
 }

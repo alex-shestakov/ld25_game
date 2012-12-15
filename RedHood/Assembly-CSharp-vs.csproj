@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\GUI\UITKSprite.cs" />
      <Compile Include="Assets\Scripts\GUI\UIToolkitCommonAssets.cs" />
      <Compile Include="Assets\Scripts\Game\CameraFollowingBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Game\EnemyDeathVisualization.cs" />
      <Compile Include="Assets\Scripts\Game\PlayerMovementController.cs" />
      <Compile Include="Assets\Scripts\Game\RidingHoodAI.cs" />
      <Compile Include="Assets\Scripts\Game\RidingHoodPanicBehaviour.cs" />

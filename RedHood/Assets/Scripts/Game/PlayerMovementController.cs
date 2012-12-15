@@ -53,6 +53,10 @@ public class PlayerMovementController : MonoBehaviour {
 	}
 	
 	 void OnControllerColliderHit(ControllerColliderHit hit) {
+		if (hit.gameObject.CompareTag("RidingHood")) {
+			hit.gameObject.SendMessage("OnKilled");
+		}
+		
 		/*
         Rigidbody body = hit.collider.attachedRigidbody;
         if (body == null || body.isKinematic)
