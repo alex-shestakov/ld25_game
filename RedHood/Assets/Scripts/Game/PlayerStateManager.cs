@@ -8,6 +8,9 @@ public class PlayerStateManager : MonoBehaviour {
 	public BonusActivator stickBonusActivator;
 	public BonusActivator glassBonusActivator;
 	public BonusActivator godModeBonusActivator;
+	
+	public UITKText godModeCounterText;
+	
 	//public PlayerMovementController player;
 	
 	public int godModeParm = 10;
@@ -30,9 +33,10 @@ public class PlayerStateManager : MonoBehaviour {
 	//}
 	
 	// Use this for initialization
-	//void Start () {
-	//
-	//}
+	void Start () 
+	{
+		godModeCounterText.setText(godModeCounter+"/"+godModeParm);
+	}
 	
 	public bool MetObject(HealthController.FoodType foodObj)
 	{
@@ -53,6 +57,7 @@ public class PlayerStateManager : MonoBehaviour {
 			
 			case HealthController.FoodType.RedHood:
 				godModeCounter++;
+			    godModeCounterText.setText(godModeCounter+"/"+godModeParm);
 				giveBonus(false);
 				healthController.OnEatenFood(foodObj);	
 				ret = true;
@@ -91,7 +96,7 @@ public class PlayerStateManager : MonoBehaviour {
 	{
 		if (isGranny)
 		{
-			BonusType bonus = intToType(Random.Range(1, 2));
+			BonusType bonus = intToType(Random.Range(1, 3));
 			
 			switch (bonus)
 			{
@@ -112,7 +117,7 @@ public class PlayerStateManager : MonoBehaviour {
 		else if (godModeCounter == godModeParm)
 		{
 			godModeCounter = 0;
-			
+			godModeCounterText.setText(godModeCounter+"/"+godModeParm);
 			godModeBonusActivator.onBonusCollected();
 			//godModeEnabled = true;
 			//progressGodMode.resetTimer();

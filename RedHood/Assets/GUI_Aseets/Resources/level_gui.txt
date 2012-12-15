@@ -1,64 +1,72 @@
 {"frames": {
 
-"cap.png":
+"bar_back.png":
 {
-	"frame": {"x":170,"y":155,"w":104,"h":77},
+	"frame": {"x":6,"y":70,"w":304,"h":54},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":77},
-	"sourceSize": {"w":104,"h":77}
+	"spriteSourceSize": {"x":0,"y":0,"w":304,"h":54},
+	"sourceSize": {"w":304,"h":54}
 },
-"evil_mode.png":
+"bar_front.png":
 {
-	"frame": {"x":380,"y":180,"w":93,"h":116},
+	"frame": {"x":6,"y":6,"w":304,"h":54},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":116},
-	"sourceSize": {"w":93,"h":116}
+	"spriteSourceSize": {"x":0,"y":0,"w":304,"h":54},
+	"sourceSize": {"w":304,"h":54}
 },
-"false_teeth.png":
+"boots.png":
 {
-	"frame": {"x":6,"y":41,"w":154,"h":114},
+	"frame": {"x":70,"y":377,"w":54,"h":54},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":114},
-	"sourceSize": {"w":154,"h":114}
+	"spriteSourceSize": {"x":0,"y":0,"w":54,"h":54},
+	"sourceSize": {"w":54,"h":54}
 },
 "girl.png":
 {
-	"frame": {"x":284,"y":155,"w":86,"h":148},
+	"frame": {"x":6,"y":155,"w":86,"h":148},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":6,"w":86,"h":148},
 	"sourceSize": {"w":108,"h":154}
 },
-"glasses.png":
+"glass.png":
 {
-	"frame": {"x":380,"y":93,"w":104,"h":77},
+	"frame": {"x":70,"y":313,"w":54,"h":54},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":77},
-	"sourceSize": {"w":104,"h":77}
+	"spriteSourceSize": {"x":0,"y":0,"w":54,"h":54},
+	"sourceSize": {"w":54,"h":54}
 },
-"health_bar.png":
+"icon_back.png":
 {
-	"frame": {"x":6,"y":6,"w":200,"h":25},
+	"frame": {"x":6,"y":441,"w":54,"h":54},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":25},
-	"sourceSize": {"w":200,"h":25}
+	"spriteSourceSize": {"x":0,"y":0,"w":54,"h":54},
+	"sourceSize": {"w":54,"h":54}
 },
-"stick.png":
+"restart.png":
 {
-	"frame": {"x":380,"y":6,"w":104,"h":77},
+	"frame": {"x":6,"y":377,"w":54,"h":54},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":77},
-	"sourceSize": {"w":104,"h":77}
+	"spriteSourceSize": {"x":0,"y":0,"w":54,"h":54},
+	"sourceSize": {"w":54,"h":54}
+},
+"wolf.png":
+{
+	"frame": {"x":6,"y":313,"w":54,"h":54},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":54,"h":54},
+	"sourceSize": {"w":54,"h":54}
 },
 "wolf_ava.png":
 {
-	"frame": {"x":216,"y":6,"w":154,"h":139},
+	"frame": {"x":320,"y":6,"w":154,"h":139},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":139},
@@ -71,6 +79,6 @@
 	"format": "RGBA8888",
 	"size": {"w":512,"h":512},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:765d792610dd1f9314d85a3e881bc441$"
+	"smartupdate": "$TexturePacker:SmartUpdate:cf9a41772b0287a9c51a2facf6d15bc2$"
 }
 }

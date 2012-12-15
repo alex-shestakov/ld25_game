@@ -25,6 +25,10 @@ public class HunterAttackingBehaviour : MonoBehaviour {
 	}
 	
 	void Update () {
+		
+		if (targetTransform == null)
+			return;
+		
 		reloadTimer += Time.deltaTime;
 		
 		Vector3 followDirection = targetTransform.position - parentTransform.position;

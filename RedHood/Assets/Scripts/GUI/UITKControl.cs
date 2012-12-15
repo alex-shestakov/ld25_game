@@ -70,7 +70,7 @@ public class UITKControl : MonoBehaviour {
 	
 	protected virtual void initButtonPosition()
 	{
-		gameButton.positionFromTopLeft(0f, 0f);
+		gameButton.positionFromTopLeft(posFromTop, posFromLeft);
 	}
 	
 	private void OnEnable() 

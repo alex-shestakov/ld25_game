@@ -1,19 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/CameraFollowingBehaviour.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/EnemyDeathVisualization.cs">
     <Files>
-      <File FileName="Assets/Scripts/Game/RidingHoodWanderingBehaviour.cs" Line="5" Column="2" />
-      <File FileName="Assets/Scripts/Game/RidingHoodPanicBehaviour.cs" Line="6" Column="2" />
-      <File FileName="Assets/Scripts/Game/RidingHoodAI.cs" Line="28" Column="38" />
-      <File FileName="Assets/Scripts/Game/PlayerMovementController.cs" Line="80" Column="29" />
-      <File FileName="Assets/Scripts/Game/EnemyDeathVisualization.cs" Line="16" Column="1" />
-      <File FileName="Assets/Scripts/Game/AutoDestruction.cs" Line="28" Column="6" />
-      <File FileName="Assets/Scripts/Game/ObjectPool.cs" Line="40" Column="13" />
-      <File FileName="Assets/Scripts/Game/HunterAttackingBehaviour.cs" Line="26" Column="3" />
-      <File FileName="Assets/Scripts/Game/ProjectileCollisionHandler.cs" Line="7" Column="3" />
-      <File FileName="Assets/Scripts/Game/BonusActivator.cs" Line="21" Column="45" />
-      <File FileName="Assets/Scripts/Game/PlayerStateManager.cs" Line="124" Column="32" />
-      <File FileName="Assets/Scripts/GUI/HealthController.cs" Line="22" Column="32" />
+      <File FileName="Assets/Scripts/Game/RidingHoodWanderingBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/RidingHoodPanicBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/RidingHoodAI.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/PlayerMovementController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/EnemyDeathVisualization.cs" Line="13" Column="63" />
+      <File FileName="Assets/Scripts/Game/AutoDestruction.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/ObjectPool.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/HunterAttackingBehaviour.cs" Line="30" Column="58" />
+      <File FileName="Assets/Scripts/Game/ProjectileCollisionHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/BonusActivator.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/PlayerStateManager.cs" Line="93" Column="3" />
+      <File FileName="Assets/Scripts/GUI/HealthController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Game/CameraFollowingBehaviour.cs" Line="22" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>

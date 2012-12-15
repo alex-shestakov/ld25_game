@@ -1,0 +1,20 @@
+{"frames": {
+
+"GameLabelFnt.png":
+{
+	"frame": {"x":3,"y":3,"w":506,"h":196},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":2,"w":506,"h":196},
+	"sourceSize": {"w":512,"h":256}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "level_text.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":512},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:806b497e9bdf584e1184dd4dbf9e4c4c$"
+}
+}

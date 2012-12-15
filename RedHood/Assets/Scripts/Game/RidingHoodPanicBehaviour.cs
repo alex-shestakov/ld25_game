@@ -16,6 +16,9 @@ public class RidingHoodPanicBehaviour : MonoBehaviour {
 	}
 	
 	void Update () {
+		if (targetTransform == null)
+			return;
+		
 		Vector3 fleeDirection = parentTransform.position - targetTransform.position;
 		fleeDirection.Normalize();
 		parentBody.AddForce(fleeDirection * fleeForce);

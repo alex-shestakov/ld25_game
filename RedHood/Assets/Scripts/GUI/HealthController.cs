@@ -50,7 +50,7 @@ public class HealthController : MonoBehaviour {
 	private void OnProgressTimerExpired() 
 	{
 		//gameController.playerStarved();
-	
+		GameObject.FindGameObjectWithTag("Player").SendMessage("OnKilled");
 	}
 	
 	public void OnProjectile()

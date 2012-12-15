@@ -15,6 +15,9 @@ public class CameraFollowingBehaviour : MonoBehaviour {
 	}
 	
 	void Update() {
+		if (target == null)
+			return;
+		
 		Vector3 moveCameraTo;
 		if (bonusActive == false)
 			moveCameraTo = target.position + initialOffset;
