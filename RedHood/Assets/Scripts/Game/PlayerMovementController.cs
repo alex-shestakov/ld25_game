@@ -55,7 +55,7 @@ public class PlayerMovementController : MonoBehaviour {
 	}
 	
 	 void OnControllerColliderHit(ControllerColliderHit hit) {
-		if (hit.gameObject.CompareTag("RidingHood")) {
+		if (hit.gameObject.CompareTag("RidingHood") || hit.gameObject.CompareTag("Granny")) {
 			hit.gameObject.SendMessage("OnKilled");
 		}
     }

@@ -47,7 +47,9 @@
      <Compile Include="Assets\Scripts\GUI\BonusIcon.cs" />
      <Compile Include="Assets\Scripts\GUI\EvilModeBar.cs" />
      <Compile Include="Assets\Scripts\GUI\HealthBar.cs" />
+     <Compile Include="Assets\Scripts\GUI\HealthController.cs" />
      <Compile Include="Assets\Scripts\GUI\UITKControl.cs" />
+     <Compile Include="Assets\Scripts\GUI\UITKProgressBar.cs" />
      <Compile Include="Assets\Scripts\GUI\UITKSprite.cs" />
      <Compile Include="Assets\Scripts\GUI\UIToolkitCommonAssets.cs" />
      <Compile Include="Assets\Scripts\Game\CameraFollowingBehaviour.cs" />
