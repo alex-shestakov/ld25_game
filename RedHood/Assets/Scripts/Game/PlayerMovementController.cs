@@ -9,6 +9,8 @@ public class PlayerMovementController : MonoBehaviour {
 	
 	public float rotationSpeed = 1f;
 	
+	public float bonusSpeedMultiplier = 1.6f;
+	
 	private float initialYValue;
 	private CharacterController controller;
 	private Vector3 movementDirection = Vector3.zero;
@@ -83,5 +85,13 @@ public class PlayerMovementController : MonoBehaviour {
 	
 	void OnCollisionWithProjectile() {
 		print ("Hit!");
+	}
+	
+	void BonusActivated() {
+		movementSpeed *= bonusSpeedMultiplier;
+	}
+	
+	void BonusDeactivated() {
+		movementSpeed /= bonusSpeedMultiplier;
 	}
 }

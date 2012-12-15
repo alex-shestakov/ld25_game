@@ -15,10 +15,13 @@ public class HunterAttackingBehaviour : MonoBehaviour {
 	private Rigidbody parentBody;
 	private float reloadTimer = float.MaxValue;
 	
+	private AudioSource shotSound;
+	
 	void Start () {
 		targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
 		parentTransform = transform.parent.transform;
 		parentBody = transform.parent.rigidbody;
+		shotSound = parentTransform.GetComponent<AudioSource>();
 	}
 	
 	void Update () {
@@ -33,6 +36,7 @@ public class HunterAttackingBehaviour : MonoBehaviour {
 			projectile.AddForce(followDirection * projectileLaunchForce, ForceMode.Impulse);
 			parentBody.AddForce(followDirection * -suspension, ForceMode.Impulse);
 			reloadTimer = 0f;	
+			AudioSource.PlayClipAtPoint(shotSound.clip, transform.position);
 		}
 		else 
 			parentBody.AddForce(followDirection * followingForce);

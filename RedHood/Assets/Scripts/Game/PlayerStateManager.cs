@@ -91,7 +91,7 @@ public class PlayerStateManager : MonoBehaviour {
 	{
 		if (isGranny)
 		{
-			BonusType bonus = intToType(Random.Range(1, 3));
+			BonusType bonus = intToType(Random.Range(1, 2));
 			
 			switch (bonus)
 			{
