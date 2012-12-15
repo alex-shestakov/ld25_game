@@ -1,10 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerMovementController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/RidingHoodWanderingBehaviour.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerMovementController.cs" Line="50" Column="24" />
-      <File FileName="Assets/Scripts/CameraFollowingBehaviour.cs" Line="19" Column="1" />
       <File FileName="../../TidyTileMapper/Assets/Scripts/PlatformerPlayerController.cs" Line="205" Column="5" />
+      <File FileName="Assets/Scripts/Game/RidingHoodWanderingBehaviour.cs" Line="12" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -44,15 +44,17 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CameraFollowingBehaviour.cs" />
      <Compile Include="Assets\Scripts\GUI\BonusIcon.cs" />
      <Compile Include="Assets\Scripts\GUI\EvilModeBar.cs" />
      <Compile Include="Assets\Scripts\GUI\HealthBar.cs" />
      <Compile Include="Assets\Scripts\GUI\UITKControl.cs" />
      <Compile Include="Assets\Scripts\GUI\UITKSprite.cs" />
      <Compile Include="Assets\Scripts\GUI\UIToolkitCommonAssets.cs" />
-     <Compile Include="Assets\Scripts\PlayerMovementController.cs" />
-     <Compile Include="Assets\Scripts\RidingHoodWanderingBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Game\CameraFollowingBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Game\PlayerMovementController.cs" />
+     <Compile Include="Assets\Scripts\Game\RidingHoodAI.cs" />
+     <Compile Include="Assets\Scripts\Game\RidingHoodPanicBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Game\RidingHoodWanderingBehaviour.cs" />
      <Compile Include="Assets\TerrainToolkit\TerrainToolkit.cs" />
      <Compile Include="Assets\Toolkit examples\DemoSceneScripts\ColorPickerManager.cs" />
      <Compile Include="Assets\Toolkit examples\DemoSceneScripts\ExtendedTextManager.cs" />

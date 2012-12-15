@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class RidingHoodWanderingBehaviour : MonoBehaviour {
+public class RidingHoodPanicBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
