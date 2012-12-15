@@ -36,7 +36,8 @@ public class ObjectPool : MonoBehaviour {
 		Blood,
     	Granny,
     	Hunter,
-    	Rabbit
+    	Rabbit,
+		Projectile
 	}
 	
 	public static ObjectPool GetInstance() 
@@ -136,7 +137,7 @@ public class ObjectPool : MonoBehaviour {
             GameObject pooledObject = pooledObjects[idx][0];
             pooledObjects[idx].RemoveAt(0);
             pooledObject.transform.parent = null;
-            pooledObject.active = true;
+            pooledObject.SetActiveRecursively(true);
             return pooledObject;
         }
 		else if (! onlyPooled) 
@@ -167,7 +168,7 @@ public class ObjectPool : MonoBehaviour {
 			return false;
 		}
 		
-		obj.active = false;
+		obj.SetActiveRecursively(false);
       	obj.transform.parent = containerObject.transform;
       	pooledObjects[idx].Add(obj);
       	return true;

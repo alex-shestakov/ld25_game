@@ -26,7 +26,7 @@ public class HealthController : MonoBehaviour {
 	
 	}
 	
-	public void onEatenFood(FoodType food)
+	public void OnEatenFood(FoodType food)
 	{
 		switch(food)
 		{
@@ -51,5 +51,10 @@ public class HealthController : MonoBehaviour {
 	{
 		//gameController.playerStarved();
 	
+	}
+	
+	public void OnProjectile()
+	{
+		progress.addValueToTimer(-0.1f);
 	}
 }

@@ -13,7 +13,12 @@ public class PlayerMovementController : MonoBehaviour {
 	private CharacterController controller;
 	private Vector3 movementDirection = Vector3.zero;
 	
-	// Use this for initialization
+	private PlayerStateManager stateManager;
+	
+	void Awake() {
+		stateManager = GetComponent<PlayerStateManager>();		
+	}
+	
 	void Start() {
 		controller = GetComponent<CharacterController>();
 		initialYValue = transform.position.y;
@@ -54,9 +59,29 @@ public class PlayerMovementController : MonoBehaviour {
 		
 	}
 	
-	 void OnControllerColliderHit(ControllerColliderHit hit) {
-		if (hit.gameObject.CompareTag("RidingHood") || hit.gameObject.CompareTag("Granny")) {
-			hit.gameObject.SendMessage("OnKilled");
+	void OnControllerColliderHit(ControllerColliderHit hit) {
+		if (hit.gameObject.CompareTag("RidingHood")) {
+			stateManager.MetObject(HealthController.FoodType.RedHood);
+			hit.gameObject.SendMessage("OnKilled", SendMessageOptions.DontRequireReceiver);
+		}
+		
+		if (hit.gameObject.CompareTag("Hunter")) {
+			if (stateManager.MetObject(HealthController.FoodType.Hunter)) {
+				hit.gameObject.SendMessage("OnKilled", SendMessageOptions.DontRequireReceiver);
+			}	
+		}
+		
+		if (hit.gameObject.CompareTag("Granny")) {
+			stateManager.MetObject(HealthController.FoodType.Granny);
+			hit.gameObject.SendMessage("OnKilled", SendMessageOptions.DontRequireReceiver);
+		}
+		
+		if (hit.gameObject.CompareTag("Projectile")) {
+			print ("OMG! I'm hit!");	
 		}
     }
+	
+	void OnCollisionWithProjectile() {
+		print ("Hit!");
+	}
 }

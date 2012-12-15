@@ -102,6 +102,7 @@
      <None Include="Assets\iTween\ReadMe!\ReadMe!.txt" />
      <None Include="Assets\Toolkit examples\DemoAssets\Resources\colorPickerSheet.txt" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Toolkit examples\DemoAssets\Resources\joystickSheet.txt" />
      <None Include="Assets\Plugins\UIToolkit\Shaders\UIToolkit Alpha Enabled (Default).shader" />
      <None Include="Assets\Toolkit examples\DemoAssets\Resources\kitchenSinkSheet.txt" />

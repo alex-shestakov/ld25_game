@@ -2,11 +2,15 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/PlayerMovementController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Game/RidingHoodWanderingBehaviour.cs" Line="18" Column="24" />
-      <File FileName="Assets/Scripts/Game/RidingHoodPanicBehaviour.cs" Line="23" Column="2" />
-      <File FileName="Assets/Scripts/Game/RidingHoodAI.cs" Line="29" Column="36" />
-      <File FileName="Assets/Scripts/Game/PlayerMovementController.cs" Line="59" Column="43" />
-      <File FileName="Assets/Scripts/Game/EnemyDeathVisualization.cs" Line="9" Column="1" />
+      <File FileName="Assets/Scripts/Game/RidingHoodWanderingBehaviour.cs" Line="5" Column="2" />
+      <File FileName="Assets/Scripts/Game/RidingHoodPanicBehaviour.cs" Line="6" Column="2" />
+      <File FileName="Assets/Scripts/Game/RidingHoodAI.cs" Line="28" Column="38" />
+      <File FileName="Assets/Scripts/Game/PlayerMovementController.cs" Line="63" Column="29" />
+      <File FileName="Assets/Scripts/Game/EnemyDeathVisualization.cs" Line="16" Column="1" />
+      <File FileName="Assets/Scripts/Game/AutoDestruction.cs" Line="28" Column="6" />
+      <File FileName="Assets/Scripts/Game/ObjectPool.cs" Line="40" Column="13" />
+      <File FileName="Assets/Scripts/Game/HunterAttackingBehaviour.cs" Line="26" Column="3" />
+      <File FileName="Assets/Scripts/Game/ProjectileCollisionHandler.cs" Line="7" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

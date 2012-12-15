@@ -59,7 +59,6 @@ public class UITKProgressBar : UITKControl {
 			}
 			yield return new WaitForSeconds(updatePeriodTime);	
 		}
-		yield break;
 	}
 	
 	private void startAutoTimer()
@@ -75,6 +74,6 @@ public class UITKProgressBar : UITKControl {
 	
 	public void addValueToTimer(float addValue)
 	{
-		progressBar.value = Mathf.Max(progressBar.value + addValue, 1.0f);
+		progressBar.value = Mathf.Max(Mathf.Min(progressBar.value + addValue, 1.0f), 0f);
 	}
 }
