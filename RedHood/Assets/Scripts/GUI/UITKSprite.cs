@@ -10,7 +10,7 @@ public class UITKSprite : UITKControl {
 	
 	protected override void initButtonPosition()
 	{
-		mainControl.positionFromTopLeft(0.03f, 0.05f);
+		mainControl.positionFromTopLeft(posFromTop, posFromLeft);
 	}
 	
 	protected override bool getMainControlDisabled()

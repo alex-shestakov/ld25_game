@@ -156,7 +156,17 @@ public class UISprite : UIObject, IPositionable
 	
 	public override Vector3 position
 	{
-		get { return clientTransform.position; }
+		get 
+		{ 
+			if (clientTransform != null)
+			{
+				return clientTransform.position; 
+			}
+			else
+			{
+				return Vector3.zero;
+			}
+		}
 		set
 		{
 			base.position = value;
@@ -167,7 +177,17 @@ public class UISprite : UIObject, IPositionable
 
 	public override Vector3 localPosition
 	{
-		get { return clientTransform.localPosition; }
+		get 
+		{ 
+			if (clientTransform != null)
+			{
+				return clientTransform.localPosition;
+			}
+			else
+			{
+				return Vector3.zero;
+			} 
+		}
 		set
 		{
 			base.localPosition = value;
@@ -342,6 +362,11 @@ public class UISprite : UIObject, IPositionable
 		// if we are hidden or suspended, no need to update our positions as that would cause us to be visible again
 		if( hidden || _suspendUpdates )
 			return;
+		
+		if (clientTransform == null)
+		{
+			return;
+		}
 		
 		meshVerts[vertexIndices.mv.one] = clientTransform.TransformPoint( v1 );
 		meshVerts[vertexIndices.mv.two] = clientTransform.TransformPoint( v2 );

@@ -3,6 +3,9 @@ using System.Collections;
 
 public class UITKControl : MonoBehaviour {
 
+	public float posFromTop;
+	public float posFromLeft;
+	
 	public string buttonNormalState;
 	public string buttonPressedState;
 	public string buttonDisabledState;

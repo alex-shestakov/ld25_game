@@ -67,10 +67,23 @@ public class UIObject : System.Object, IPositionable
 
 	public virtual Vector3 position
 	{
-		get { return clientTransform.position; }
+		get 
+		{ 
+			if (clientTransform != null)
+			{
+				return clientTransform.position; 
+			}
+			else
+			{
+				return Vector3.zero;
+			}
+		}
 		set
 		{
-			clientTransform.position = value;
+			if (clientTransform != null)
+			{
+				clientTransform.position = value;
+			}
 			if( onTransformChanged != null )
 				onTransformChanged();
 		}
@@ -79,10 +92,23 @@ public class UIObject : System.Object, IPositionable
 
 	public virtual Vector3 localPosition
 	{
-		get { return clientTransform.localPosition; }
+		get 
+		{ 
+			if (clientTransform != null)
+			{
+				return clientTransform.localPosition;
+			}
+			else
+			{
+				return Vector3.zero;
+			} 
+		}
 		set
 		{
-			clientTransform.localPosition = value;
+			if (clientTransform != null)
+			{
+				clientTransform.localPosition = value;
+			}
 			if( onTransformChanged != null )
 				onTransformChanged();
 		}
@@ -105,7 +131,7 @@ public class UIObject : System.Object, IPositionable
 	{
 		get
 		{
-			Vector3 localScale = clientTransform.localScale;
+			Vector3 localScale = (clientTransform == null) ? Vector3.one : clientTransform.localScale;
 			if( _parentUIObject != null )
 			{
 				Vector3 parentScale = _parentUIObject.scale;

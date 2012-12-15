@@ -2,15 +2,15 @@
 
 "cap.png":
 {
-	"frame": {"x":170,"y":279,"w":154,"h":114},
+	"frame": {"x":170,"y":155,"w":104,"h":77},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":114},
-	"sourceSize": {"w":154,"h":114}
+	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":77},
+	"sourceSize": {"w":104,"h":77}
 },
 "evil_mode.png":
 {
-	"frame": {"x":380,"y":6,"w":93,"h":116},
+	"frame": {"x":380,"y":180,"w":93,"h":116},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":116},
@@ -18,7 +18,7 @@
 },
 "false_teeth.png":
 {
-	"frame": {"x":6,"y":165,"w":154,"h":114},
+	"frame": {"x":6,"y":41,"w":154,"h":114},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":114},
@@ -26,7 +26,7 @@
 },
 "girl.png":
 {
-	"frame": {"x":380,"y":132,"w":86,"h":148},
+	"frame": {"x":284,"y":155,"w":86,"h":148},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":6,"w":86,"h":148},
@@ -34,11 +34,11 @@
 },
 "glasses.png":
 {
-	"frame": {"x":170,"y":155,"w":154,"h":114},
+	"frame": {"x":380,"y":93,"w":104,"h":77},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":114},
-	"sourceSize": {"w":154,"h":114}
+	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":77},
+	"sourceSize": {"w":104,"h":77}
 },
 "health_bar.png":
 {
@@ -50,11 +50,11 @@
 },
 "stick.png":
 {
-	"frame": {"x":6,"y":41,"w":154,"h":114},
+	"frame": {"x":380,"y":6,"w":104,"h":77},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":114},
-	"sourceSize": {"w":154,"h":114}
+	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":77},
+	"sourceSize": {"w":104,"h":77}
 },
 "wolf_ava.png":
 {
@@ -71,6 +71,6 @@
 	"format": "RGBA8888",
 	"size": {"w":512,"h":512},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:997d4ac13260065fd6a7fa0b1d4a6000$"
+	"smartupdate": "$TexturePacker:SmartUpdate:765d792610dd1f9314d85a3e881bc441$"
 }
 }
