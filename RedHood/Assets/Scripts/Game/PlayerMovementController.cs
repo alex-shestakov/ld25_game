@@ -9,13 +9,14 @@ public class PlayerMovementController : MonoBehaviour {
 	
 	public float rotationSpeed = 1f;
 	
-	
+	private float initialYValue;
 	private CharacterController controller;
 	private Vector3 movementDirection = Vector3.zero;
 	
 	// Use this for initialization
 	void Start() {
 		controller = GetComponent<CharacterController>();
+		initialYValue = transform.position.y;
 	}
 	
 	void Update() {
@@ -50,23 +51,12 @@ public class PlayerMovementController : MonoBehaviour {
 			movementDirection *= movementSpeed;
 		}
 		controller.Move(movementDirection);
+		
 	}
 	
 	 void OnControllerColliderHit(ControllerColliderHit hit) {
 		if (hit.gameObject.CompareTag("RidingHood")) {
 			hit.gameObject.SendMessage("OnKilled");
 		}
-		
-		/*
-        Rigidbody body = hit.collider.attachedRigidbody;
-        if (body == null || body.isKinematic)
-            return;
-        
-        if (hit.moveDirection.y < -0.3F)
-            return;
-        
-        Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
-        body.velocity = pushDir * pushPower;
-        */
     }
 }
