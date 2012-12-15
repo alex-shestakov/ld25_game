@@ -1,0 +1,76 @@
+{"frames": {
+
+"cap.png":
+{
+	"frame": {"x":170,"y":279,"w":154,"h":114},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":114},
+	"sourceSize": {"w":154,"h":114}
+},
+"evil_mode.png":
+{
+	"frame": {"x":380,"y":6,"w":93,"h":116},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":116},
+	"sourceSize": {"w":93,"h":116}
+},
+"false_teeth.png":
+{
+	"frame": {"x":6,"y":165,"w":154,"h":114},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":114},
+	"sourceSize": {"w":154,"h":114}
+},
+"girl.png":
+{
+	"frame": {"x":380,"y":132,"w":86,"h":148},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":6,"w":86,"h":148},
+	"sourceSize": {"w":108,"h":154}
+},
+"glasses.png":
+{
+	"frame": {"x":170,"y":155,"w":154,"h":114},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":114},
+	"sourceSize": {"w":154,"h":114}
+},
+"health_bar.png":
+{
+	"frame": {"x":6,"y":6,"w":200,"h":25},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":25},
+	"sourceSize": {"w":200,"h":25}
+},
+"stick.png":
+{
+	"frame": {"x":6,"y":41,"w":154,"h":114},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":114},
+	"sourceSize": {"w":154,"h":114}
+},
+"wolf_ava.png":
+{
+	"frame": {"x":216,"y":6,"w":154,"h":139},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":139},
+	"sourceSize": {"w":154,"h":139}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "level_gui.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":512},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:997d4ac13260065fd6a7fa0b1d4a6000$"
+}
+}
