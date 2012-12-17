@@ -41,7 +41,8 @@ public class HunterAttackingBehaviour : MonoBehaviour {
 			projectile.AddForce(followDirection * projectileLaunchForce, ForceMode.Impulse);
 			parentBody.AddForce(followDirection * -suspension, ForceMode.Impulse);
 			reloadTimer = 0f;	
-			AudioSource.PlayClipAtPoint(shotSound.clip, transform.position);
+			//AudioSource.PlayClipAtPoint(shotSound.clip, transform.position);
+			shotSound.Play();
 		}
 		else 
 			parentBody.AddForce(followDirection * followingForce);

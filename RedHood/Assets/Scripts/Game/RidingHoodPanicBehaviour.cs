@@ -9,10 +9,19 @@ public class RidingHoodPanicBehaviour : MonoBehaviour {
 	private Transform parentTransform;
 	private Rigidbody parentBody;
 	
+	public AudioClip[]  screamClips;
+	public AudioSource  screamSound;
+	private int soundsNum;
+	
 	void Start () {
 		targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
 		parentTransform = transform.parent.transform;
 		parentBody = transform.parent.rigidbody;
+		
+		if (screamClips != null)
+		{
+			soundsNum = screamClips.Length;
+		}
 	}
 	
 	void Update () {
@@ -23,4 +32,15 @@ public class RidingHoodPanicBehaviour : MonoBehaviour {
 		fleeDirection.Normalize();
 		parentBody.AddForce(fleeDirection * fleeForce);
 	}
+	
+	void OnEnable() 
+	{
+        if (soundsNum > 0)
+		{ 
+			int idx = (soundsNum > 1) ? Random.Range(0, soundsNum) : 0;
+			screamSound.clip = screamClips[idx];
+			screamSound.Play();
+			//print ("scream sound " + screamSounds[idx].clip.name);
+		}
+    }
 }

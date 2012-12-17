@@ -18,7 +18,8 @@ public class PlayerMovementController : MonoBehaviour {
 	private PlayerStateManager stateManager;
 	private bool paralized;
 	
-	private AudioSource munchSound;
+	public AudioSource munchSound;
+	public AudioSource  stepSound;
 	
 	void Awake() {
 		stateManager = GetComponent<PlayerStateManager>();		
@@ -28,7 +29,7 @@ public class PlayerMovementController : MonoBehaviour {
 		controller = GetComponent<CharacterController>();
 		initialYValue = transform.position.y;
 		paralized = true;
-		munchSound = GetComponent<AudioSource>();
+		//munchSound = GetComponent<AudioSource>();
 	}
 	
 	void Update() {
@@ -36,25 +37,49 @@ public class PlayerMovementController : MonoBehaviour {
 		ProcessMovement();
 	}
 	
+	private void UpdateStepSound(bool play)
+	{
+		if (play && ! stepSound.isPlaying)
+		{
+			stepSound.Play();
+		}
+		
+		if (! play && stepSound.isPlaying)
+		{
+			stepSound.Stop();
+		}
+	}
+	
 	void HandleInput() {
+		bool isMoving = false;
 		float threshold = 0.3f;
 		if (Mathf.Abs(Input.GetAxis("Horizontal")) > threshold) {
 			movementDirection.x += Input.GetAxis("Horizontal") * Time.deltaTime * accelerationSpeed;
 			movementDirection.x = Mathf.Clamp(movementDirection.x, -movementSpeed, movementSpeed);
+			isMoving = true;
 		}
 		else if (Mathf.Abs(movementDirection.x) > 0.05f)
+		{
 			movementDirection.x *= friction;
+			isMoving = true;
+		}
 		else 
 			movementDirection.x = 0f;
 		
 		if (Mathf.Abs(Input.GetAxis("Vertical")) > threshold) {
 			movementDirection.z += Input.GetAxis("Vertical") * Time.deltaTime * accelerationSpeed;
 			movementDirection.z = Mathf.Clamp(movementDirection.z, -movementSpeed, movementSpeed);
+			isMoving = true;
 		}
 		else if (Mathf.Abs(movementDirection.z) > 0.05f)
+		{
 			movementDirection.z *= friction;
+			isMoving = true;
+		}
 		else 
 			movementDirection.z = 0f;
+		
+		UpdateStepSound(isMoving);
 	}
 	
 	void ProcessMovement() {
