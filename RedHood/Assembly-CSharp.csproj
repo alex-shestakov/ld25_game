@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Game\CameraFollowingBehaviour.cs" />
      <Compile Include="Assets\Scripts\Game\EnemyDeathVisualization.cs" />
      <Compile Include="Assets\Scripts\Game\GameController.cs" />
+     <Compile Include="Assets\Scripts\Game\GodModeBonusForwarder.cs" />
      <Compile Include="Assets\Scripts\Game\HunterAI.cs" />
      <Compile Include="Assets\Scripts\Game\HunterAttackingBehaviour.cs" />
      <Compile Include="Assets\Scripts\Game\ObjectPool.cs" />
@@ -76,6 +77,7 @@
      <Compile Include="Assets\Scripts\Game\RidingHoodPanicBehaviour.cs" />
      <Compile Include="Assets\Scripts\Game\RidingHoodWanderingBehaviour.cs" />
      <Compile Include="Assets\Scripts\Game\Spawner.cs" />
+     <Compile Include="Assets\Scripts\Game\WolfLookController.cs" />
      <Compile Include="Assets\TerrainToolkit\TerrainToolkit.cs" />
      <Compile Include="Assets\Toolkit examples\DemoSceneScripts\ColorPickerManager.cs" />
      <Compile Include="Assets\Toolkit examples\DemoSceneScripts\ExtendedTextManager.cs" />

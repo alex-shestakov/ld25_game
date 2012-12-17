@@ -19,12 +19,17 @@ public class HealthController : MonoBehaviour {
 	
 	private bool startedDecreasing;
 	
+	private GameObject playerObj;
+	private UITKTimer timer;
+	
 	//GameController;
 
 	// Use this for initialization
 	void Awake() 
 	{
-		progress = GetComponent<UITKProgressBar>();
+		progress  = GetComponent<UITKProgressBar>();
+		playerObj = GameObject.FindGameObjectWithTag("Player");
+		timer = GameObject.FindObjectOfType(typeof(UITKTimer)) as UITKTimer;
 	}
 	
 	void LateUpdate() {
@@ -55,17 +60,20 @@ public class HealthController : MonoBehaviour {
 	
 	private void OnProgressTimerExpired() 
 	{
-		//gameController.playerStarved();
-		GameObject.FindGameObjectWithTag("Player").SendMessage("OnKilled", SendMessageOptions.DontRequireReceiver);
-		UITKTimer timer = GameObject.FindObjectOfType(typeof(UITKTimer)) as UITKTimer;
+		print ("progress timer expired!");
+		playerObj.SendMessage("OnKilled", SendMessageOptions.DontRequireReceiver);
 		timer.StopAllCoroutines();
 	}
 	
 	public void OnProjectile()
 	{
-		print ("HealthController: OnPorjectile called, current progress is " + progress.getValue());
+		print ("HealthController: OnProjectile called, current progress is " + progress.getValue());
 		progress.addValueToTimer(-0.33f);
-		print ("HealthController: OnPorjectile called, the progress is " + progress.getValue() + " now");
+		print ("HealthController: OnProjectile called, the progress is " + progress.getValue() + " now");
+		if (progress.getValue() <= 0f)
+		{
+			OnProgressTimerExpired();
+		}
 	}
 	
 	void OnCountdownFinished() {

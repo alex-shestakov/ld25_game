@@ -10,6 +10,8 @@ public class UITKText : MonoBehaviour {
 	
 	public float posFromTop;
 	public float posFromLeft;
+	public float fontScale = 1.0f;
+	public bool  initiallyHidden = false;
 	
 	public string initialText = "";
 	
@@ -24,12 +26,24 @@ public class UITKText : MonoBehaviour {
 	{
 		toolkitText = toolkitAssets.getLabelText();	
 		
-		label = toolkitText.addTextInstance(initialText, 0, 0, 1f, 15);
+		label = toolkitText.addTextInstance(initialText, 0, 0, fontScale, 15);
 		label.positionFromTopLeft(posFromTop, posFromLeft);
+		if (initiallyHidden)
+		{
+			label.hidden = true;
+		}
 	}
 	
 	public void setText(string newText)
 	{
 		label.text = newText;
+	}
+	
+	public void setHidden(bool isHidden)
+	{
+		if (label != null)
+		{
+			label.hidden = isHidden;
+		}
 	}
 }

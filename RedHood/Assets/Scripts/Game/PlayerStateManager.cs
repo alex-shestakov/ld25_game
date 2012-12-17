@@ -11,6 +11,8 @@ public class PlayerStateManager : MonoBehaviour {
 	
 	public UITKText godModeCounterText;
 	
+	private WolfLookController wolfLook;
+	
 	//public PlayerMovementController player;
 	
 	public int godModeParm = 10;
@@ -32,9 +34,15 @@ public class PlayerStateManager : MonoBehaviour {
 	//	Hunter
 	//}
 	
+	void Awake()
+	{
+		wolfLook = GetComponentInChildren<WolfLookController>() as WolfLookController;
+	}
+	
 	// Use this for initialization
 	void Start () 
 	{
+		//godModeCounterText.setText(godModeCounter+"/"+godModeParm+"\n until God Mode");
 		// godModeCounterText.setText(godModeCounter+"/"+godModeParm);
 	}
 	
@@ -57,7 +65,8 @@ public class PlayerStateManager : MonoBehaviour {
 			
 			case HealthController.FoodType.RedHood:
 				godModeCounter++;
-			    godModeCounterText.setText(godModeCounter+"/"+godModeParm);
+			    //godModeCounterText.setText(godModeCounter+"/"+godModeParm);
+			    godModeCounterText.setText(godModeCounter+"/"+godModeParm+"\nuntil God Mode");
 				giveBonus(false);
 				healthController.OnEatenFood(foodObj);	
 				ret = true;
@@ -74,6 +83,7 @@ public class PlayerStateManager : MonoBehaviour {
 				ret = true;
 				break;
 		}
+	
 		return ret;
 	}
 	
@@ -117,8 +127,9 @@ public class PlayerStateManager : MonoBehaviour {
 		else if (godModeCounter == godModeParm)
 		{
 			godModeCounter = 0;
-			godModeCounterText.setText(godModeCounter+"/"+godModeParm);
+			godModeCounterText.setText(godModeCounter+"/"+godModeParm+"\nuntil God Mode");
 			godModeBonusActivator.onBonusCollected();
+			wolfLook.setGodMode(true);
 			//godModeEnabled = true;
 			//progressGodMode.resetTimer();
 		}
@@ -127,6 +138,13 @@ public class PlayerStateManager : MonoBehaviour {
 	public void OnCollisionWithProjectile()
 	{
 		print ("PlayerStateManager: OnCollisionWithProjectile called");
-		healthController.OnProjectile();
+		if (! godModeBonusActivator.getIsActive())
+		{
+			healthController.OnProjectile();
+		}
+	}
+	
+	public void OnGodModeBonusDeactivated() {
+		wolfLook.setGodMode(false);
 	}
 }

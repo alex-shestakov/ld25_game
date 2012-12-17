@@ -18,23 +18,31 @@
 },
 "boots.png":
 {
-	"frame": {"x":70,"y":377,"w":54,"h":54},
+	"frame": {"x":70,"y":134,"w":54,"h":54},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":54,"h":54},
 	"sourceSize": {"w":54,"h":54}
 },
-"girl.png":
+"girl1.png":
 {
-	"frame": {"x":6,"y":155,"w":86,"h":148},
+	"frame": {"x":6,"y":198,"w":88,"h":154},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":14,"y":6,"w":86,"h":148},
+	"spriteSourceSize": {"x":12,"y":0,"w":88,"h":154},
+	"sourceSize": {"w":108,"h":154}
+},
+"girl2.png":
+{
+	"frame": {"x":320,"y":6,"w":100,"h":154},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":0,"w":100,"h":154},
 	"sourceSize": {"w":108,"h":154}
 },
 "glass.png":
 {
-	"frame": {"x":70,"y":313,"w":54,"h":54},
+	"frame": {"x":6,"y":134,"w":54,"h":54},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":54,"h":54},
@@ -42,7 +50,7 @@
 },
 "icon_back.png":
 {
-	"frame": {"x":6,"y":441,"w":54,"h":54},
+	"frame": {"x":430,"y":134,"w":54,"h":54},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":54,"h":54},
@@ -50,7 +58,7 @@
 },
 "restart.png":
 {
-	"frame": {"x":6,"y":377,"w":54,"h":54},
+	"frame": {"x":430,"y":70,"w":54,"h":54},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":54,"h":54},
@@ -58,19 +66,11 @@
 },
 "wolf.png":
 {
-	"frame": {"x":6,"y":313,"w":54,"h":54},
+	"frame": {"x":430,"y":6,"w":54,"h":54},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":54,"h":54},
 	"sourceSize": {"w":54,"h":54}
-},
-"wolf_ava.png":
-{
-	"frame": {"x":320,"y":6,"w":154,"h":139},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":139},
-	"sourceSize": {"w":154,"h":139}
 }},
 "meta": {
 	"app": "http://www.texturepacker.com",
@@ -79,6 +79,6 @@
 	"format": "RGBA8888",
 	"size": {"w":512,"h":512},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:cf9a41772b0287a9c51a2facf6d15bc2$"
+	"smartupdate": "$TexturePacker:SmartUpdate:abb66ccf0d6edafdb705da8200662eff$"
 }
 }
