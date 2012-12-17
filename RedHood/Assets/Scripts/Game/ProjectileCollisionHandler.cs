@@ -2,7 +2,9 @@ using UnityEngine;
 using System.Collections;
 
 public class ProjectileCollisionHandler : MonoBehaviour {
-	void OnCollisionEnter(Collision collision) {
-        collider.gameObject.SendMessage("OnCollisionWithProjectile", SendMessageOptions.DontRequireReceiver);
+	void OnTriggerEnter(Collider other) {
+		if (other.gameObject.CompareTag("Player")) {
+			other.gameObject.SendMessage("OnCollisionWithProjectile", SendMessageOptions.DontRequireReceiver);
+		}
 	}
 }

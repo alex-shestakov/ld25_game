@@ -119,6 +119,8 @@ public class UITKControl : MonoBehaviour {
 	protected virtual void onClick( UIButton sender )
     {	
 		print ("onclick base Toolkit menu item");
+		
+		Application.LoadLevel("BattleScene");
 	}
 	
 	protected void LockStateChanged() 

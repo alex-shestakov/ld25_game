@@ -45,9 +45,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GUI\BonusIcon.cs" />
+     <Compile Include="Assets\Scripts\GUI\EmptyObjectWithGizmoIcon.cs" />
      <Compile Include="Assets\Scripts\GUI\EvilModeBar.cs" />
      <Compile Include="Assets\Scripts\GUI\HealthBar.cs" />
      <Compile Include="Assets\Scripts\GUI\HealthController.cs" />
+     <Compile Include="Assets\Scripts\GUI\OnLoadingFinishedEnabler.cs" />
+     <Compile Include="Assets\Scripts\GUI\ReadySteadyDisplayer.cs" />
      <Compile Include="Assets\Scripts\GUI\UITKControl.cs" />
      <Compile Include="Assets\Scripts\GUI\UITKProgressBar.cs" />
      <Compile Include="Assets\Scripts\GUI\UITKSprite.cs" />
@@ -55,11 +58,16 @@
      <Compile Include="Assets\Scripts\GUI\UITKTimer.cs" />
      <Compile Include="Assets\Scripts\GUI\UIToolkitCommonAssets.cs" />
      <Compile Include="Assets\Scripts\Game\AutoDestruction.cs" />
+     <Compile Include="Assets\Scripts\Game\BonusActivationForwarder.cs" />
      <Compile Include="Assets\Scripts\Game\BonusActivator.cs" />
      <Compile Include="Assets\Scripts\Game\CameraFollowingBehaviour.cs" />
      <Compile Include="Assets\Scripts\Game\EnemyDeathVisualization.cs" />
+     <Compile Include="Assets\Scripts\Game\GameController.cs" />
+     <Compile Include="Assets\Scripts\Game\HunterAI.cs" />
      <Compile Include="Assets\Scripts\Game\HunterAttackingBehaviour.cs" />
      <Compile Include="Assets\Scripts\Game\ObjectPool.cs" />
+     <Compile Include="Assets\Scripts\Game\PitchDownOnPlayerDeath.cs" />
+     <Compile Include="Assets\Scripts\Game\PlaneToMovementDirectionRotator.cs" />
      <Compile Include="Assets\Scripts\Game\PlayerDeath.cs" />
      <Compile Include="Assets\Scripts\Game\PlayerMovementController.cs" />
      <Compile Include="Assets\Scripts\Game\PlayerStateManager.cs" />
@@ -67,6 +75,7 @@
      <Compile Include="Assets\Scripts\Game\RidingHoodAI.cs" />
      <Compile Include="Assets\Scripts\Game\RidingHoodPanicBehaviour.cs" />
      <Compile Include="Assets\Scripts\Game\RidingHoodWanderingBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Game\Spawner.cs" />
      <Compile Include="Assets\TerrainToolkit\TerrainToolkit.cs" />
      <Compile Include="Assets\Toolkit examples\DemoSceneScripts\ColorPickerManager.cs" />
      <Compile Include="Assets\Toolkit examples\DemoSceneScripts\ExtendedTextManager.cs" />

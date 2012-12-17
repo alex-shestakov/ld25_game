@@ -16,6 +16,9 @@ public class PlayerMovementController : MonoBehaviour {
 	private Vector3 movementDirection = Vector3.zero;
 	
 	private PlayerStateManager stateManager;
+	private bool paralized;
+	
+	private AudioSource munchSound;
 	
 	void Awake() {
 		stateManager = GetComponent<PlayerStateManager>();		
@@ -24,6 +27,8 @@ public class PlayerMovementController : MonoBehaviour {
 	void Start() {
 		controller = GetComponent<CharacterController>();
 		initialYValue = transform.position.y;
+		paralized = true;
+		munchSound = GetComponent<AudioSource>();
 	}
 	
 	void Update() {
@@ -57,23 +62,32 @@ public class PlayerMovementController : MonoBehaviour {
 			movementDirection.Normalize();
 			movementDirection *= movementSpeed;
 		}
-		controller.Move(movementDirection);
 		
+		if (paralized)
+			movementDirection *= 0.8f;
+		
+		controller.Move(movementDirection);
 	}
 	
 	void OnControllerColliderHit(ControllerColliderHit hit) {
 		if (hit.gameObject.CompareTag("RidingHood")) {
+			AudioSource.PlayClipAtPoint(munchSound.clip, transform.position);
 			stateManager.MetObject(HealthController.FoodType.RedHood);
 			hit.gameObject.SendMessage("OnKilled", SendMessageOptions.DontRequireReceiver);
 		}
 		
 		if (hit.gameObject.CompareTag("Hunter")) {
 			if (stateManager.MetObject(HealthController.FoodType.Hunter)) {
+				AudioSource.PlayClipAtPoint(munchSound.clip, transform.position);
 				hit.gameObject.SendMessage("OnKilled", SendMessageOptions.DontRequireReceiver);
-			}	
+			}
+			else {
+				//SendMessage("OnCollisionWithProjectile", SendMessageOptions.DontRequireReceiver);
+			}
 		}
 		
 		if (hit.gameObject.CompareTag("Granny")) {
+			AudioSource.PlayClipAtPoint(munchSound.clip, transform.position);
 			stateManager.MetObject(HealthController.FoodType.Granny);
 			hit.gameObject.SendMessage("OnKilled", SendMessageOptions.DontRequireReceiver);
 		}
@@ -93,5 +107,9 @@ public class PlayerMovementController : MonoBehaviour {
 	
 	void BonusDeactivated() {
 		movementSpeed /= bonusSpeedMultiplier;
+	}
+	
+	void OnCountdownFinished () {
+		paralized = false;	
 	}
 }

@@ -35,7 +35,7 @@ public class PlayerStateManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		godModeCounterText.setText(godModeCounter+"/"+godModeParm);
+		// godModeCounterText.setText(godModeCounter+"/"+godModeParm);
 	}
 	
 	public bool MetObject(HealthController.FoodType foodObj)
@@ -124,8 +124,9 @@ public class PlayerStateManager : MonoBehaviour {
 		}
 	}
 	
-	public void OnProjectile()
+	public void OnCollisionWithProjectile()
 	{
+		print ("PlayerStateManager: OnCollisionWithProjectile called");
 		healthController.OnProjectile();
 	}
 }

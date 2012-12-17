@@ -15,6 +15,6 @@ public class PlayerDeath : MonoBehaviour {
 		Destroy(gameObject);
 		
 		
-		text.setText("Oops.. You're dead!");
+		text.setText("Oops... Try again!");
 	}
 }

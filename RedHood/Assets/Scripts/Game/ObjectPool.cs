@@ -34,10 +34,10 @@ public class ObjectPool : MonoBehaviour {
     	None = 0,
 		RedHood,
 		Blood,
+		Projectile,
     	Granny,
     	Hunter,
-    	Rabbit,
-		Projectile
+    	Rabbit
 	}
 	
 	public static ObjectPool GetInstance() 
@@ -70,6 +70,7 @@ public class ObjectPool : MonoBehaviour {
     		for (int n = 0; n < bufferAmount; n++)
     		{
 				GameObject newObj = Instantiate(objectPrefab) as GameObject;
+				newObj.transform.position = Vector3.one * -1000f;
            		newObj.name = objectPrefab.name;
            		PoolObject(idxToPooledType(i), newObj);
 			}
@@ -125,7 +126,7 @@ public class ObjectPool : MonoBehaviour {
     /// pooled.
     /// </param>
     public GameObject GetObjectForType(PooledObjectType objectType, bool onlyPooled)
-    {
+    {	
         int idx = pooledTypeToIdx(objectType);
 		if (idx < 0 
 		||  idx >= objectPrefabs.Length)

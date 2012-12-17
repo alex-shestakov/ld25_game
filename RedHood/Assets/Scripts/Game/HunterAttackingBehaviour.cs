@@ -13,15 +13,16 @@ public class HunterAttackingBehaviour : MonoBehaviour {
 	private Transform targetTransform;
 	private Transform parentTransform;
 	private Rigidbody parentBody;
-	private float reloadTimer = float.MaxValue;
-	
+	private float reloadTimer;
 	private AudioSource shotSound;
+	private bool targetWithinRange;
 	
 	void Start () {
 		targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
 		parentTransform = transform.parent.transform;
 		parentBody = transform.parent.rigidbody;
 		shotSound = parentTransform.GetComponent<AudioSource>();
+		reloadTimer = Random.value * reloadTime;
 	}
 	
 	void Update () {
@@ -34,7 +35,7 @@ public class HunterAttackingBehaviour : MonoBehaviour {
 		Vector3 followDirection = targetTransform.position - parentTransform.position;
 		followDirection.Normalize();
 		
-		if (reloadTimer > reloadTime) {
+		if (targetWithinRange && reloadTimer > reloadTime) {
 			Vector3 launchStartingPosition = transform.position + 4 * followDirection;
 			Rigidbody projectile = Instantiate(projectilePrefab, launchStartingPosition, Quaternion.identity) as Rigidbody;
 			projectile.AddForce(followDirection * projectileLaunchForce, ForceMode.Impulse);
@@ -44,5 +45,23 @@ public class HunterAttackingBehaviour : MonoBehaviour {
 		}
 		else 
 			parentBody.AddForce(followDirection * followingForce);
+	}
+	
+	void OnTriggerEnter(Collider other) {
+     	if (other.CompareTag("Player")) {			
+			targetWithinRange = true;
+		}
+    }
+	
+	void OnTriggerStay(Collider other) {
+		if (other.CompareTag("Player")) {
+			targetWithinRange = true;
+		}
+	}
+	
+	void OnTriggerExit(Collider other) {
+		if (other.CompareTag("Player")) {
+			targetWithinRange = false;
+		}
 	}
 }

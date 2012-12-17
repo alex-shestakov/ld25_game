@@ -10,7 +10,9 @@ public class UITKTimer : MonoBehaviour {
 	
 	private float levelStart = 0F;
 	private float timePassed = 0F;
-
+	
+	private bool countdownFinished;
+	
 	// Use this for initialization
 	void Awake () {
 		toolkitAssets  = GameObject.FindGameObjectWithTag("GUIToolkit").GetComponent(
@@ -26,7 +28,7 @@ public class UITKTimer : MonoBehaviour {
 		labelTimer.positionFromTopLeft(0.03f, 0.5f);
 		
 		//remove this if you will send restart level message
-		onRestartLevel();
+		// onRestartLevel();
 	}
 	
 	private IEnumerator updateTimer() 
@@ -72,4 +74,19 @@ public class UITKTimer : MonoBehaviour {
 	{
 		StartCoroutine("updateTimer");
     }
+	
+	void OnLoadingFinished() 
+	{
+		//OnEnable();	
+	}
+	
+	void LateUpdate() {
+		if (!countdownFinished)
+			resetTime();
+	}
+	
+	void OnCountdownFinished() {
+		countdownFinished = true;
+		onRestartLevel();
+	}
 }
