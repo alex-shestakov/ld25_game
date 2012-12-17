@@ -35,12 +35,9 @@ public class RidingHoodPanicBehaviour : MonoBehaviour {
 	
 	void OnEnable() 
 	{
-        if (soundsNum > 0)
-		{ 
-			int idx = (soundsNum > 1) ? Random.Range(0, soundsNum) : 0;
-			screamSound.clip = screamClips[idx];
+		if (screamSound) {
+			screamSound.pitch = Random.Range(0.7f, 1.4f);
 			screamSound.Play();
-			//print ("scream sound " + screamSounds[idx].clip.name);
 		}
     }
 }

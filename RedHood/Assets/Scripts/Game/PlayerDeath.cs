@@ -15,7 +15,7 @@ public class PlayerDeath : MonoBehaviour {
 		ObjectPool pool = ObjectPool.GetInstance();
 		ParticleSystem particle = pool.GetObjectForType(ObjectPool.PooledObjectType.Blood, false).GetComponent<ParticleSystem>();
 		particle.transform.position = transform.position + new Vector3(0f, 7f, 0f);
-		particle.startColor = Color.blue;
+		//particle.startColor = Color.blue;
 		particle.Play();
 		
 		Destroy(gameObject);
