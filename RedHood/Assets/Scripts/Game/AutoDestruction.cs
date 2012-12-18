@@ -26,11 +26,16 @@ public class AutoDestruction : MonoBehaviour {
 			(Time.time - startTime > livingTime))
 		{
 			//particleSystem.Stop();
-			if (! objPool.PoolObject(poolObjId, gameObject))
-			{
-				GameObject.Destroy(gameObject);
-			}
+			DestroySelf();
 		}
 	
+	}
+	
+	public void DestroySelf()
+	{
+		if (! objPool.PoolObject(poolObjId, gameObject))
+		{
+			GameObject.Destroy(gameObject);
+		}
 	}
 }

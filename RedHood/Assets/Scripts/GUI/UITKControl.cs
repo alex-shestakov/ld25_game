@@ -16,6 +16,9 @@ public class UITKControl : MonoBehaviour {
 	protected UIToolkit toolkitManager;
 	
 	protected bool isInputDenied = false;
+	protected Rect controlRect;
+	
+	private bool isClicked = false;
 	void Start() 
 	{		
 		toolkitAssets  = GameObject.FindGameObjectWithTag("GUIToolkit").GetComponent(
@@ -53,6 +56,7 @@ public class UITKControl : MonoBehaviour {
 	{
 		initButton();
 		initButtonPosition();
+		initButtonRectScreen();
 	}
 	
 	protected virtual void initButton()
@@ -71,6 +75,18 @@ public class UITKControl : MonoBehaviour {
 	protected virtual void initButtonPosition()
 	{
 		gameButton.positionFromTopLeft(posFromTop, posFromLeft);
+	}
+	
+	protected virtual void initButtonRectScreen()
+	{
+		if (gameButton != null)
+		{
+			Rect origRect = gameButton.touchFrame;
+		    controlRect   = new Rect(origRect.xMin, 
+									 Screen.height - origRect.yMax, 
+									 origRect.width, 
+									 origRect.height);
+		}
 	}
 	
 	private void OnEnable() 
@@ -118,9 +134,30 @@ public class UITKControl : MonoBehaviour {
 	
 	protected virtual void onClick( UIButton sender )
     {	
-		print ("onclick base Toolkit menu item");
+		if (! isClicked)
+		{
+			isClicked = true;
+			print ("onclick base Toolkit menu item");
 		
-		Application.LoadLevel("BattleScene");
+			Application.LoadLevel("BattleScene");
+		}
+	}
+	
+	//web not receiving onClick bug fix
+	void Update()
+	{
+		if (gameButton != null)
+		{
+			if (Input.GetMouseButtonDown(0)) 
+			{      
+    			Vector2 fixedTouchPosition = new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y);
+        		if (controlRect.Contains(fixedTouchPosition))
+				{
+					onClick(null);	
+				}
+			}
+
+		}
 	}
 	
 	protected void LockStateChanged() 

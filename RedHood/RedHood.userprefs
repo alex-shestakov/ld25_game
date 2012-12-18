@@ -1,16 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/PitchDownOnPlayerDeath.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/AutoDestruction.cs">
     <Files>
-      <File FileName="Assets/Scripts/Game/RidingHoodWanderingBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Game/PlayerStateManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GUI/UITKText.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GUI/UITKProgressBar.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GUI/HealthController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Game/RidingHoodPanicBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Game/PlayerMovementController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Game/PlayerDeath.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Game/PitchDownOnPlayerDeath.cs" Line="32" Column="23" />
+      <File FileName="../../Rage Spline Test Project/Assets/animal cube assets/Scripts/Menus/UITK Buttons/UIToolkitGameMenu.cs" Line="78" Column="3" />
+      <File FileName="Assets/Plugins/UIToolkit/UIElements/UIButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/PlayerMovementController.cs" Line="110" Column="23" />
+      <File FileName="Assets/Scripts/Game/ProjectileCollisionHandler.cs" Line="21" Column="34" />
+      <File FileName="Assets/Scripts/Game/AutoDestruction.cs" Line="32" Column="3" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">

@@ -16,7 +16,7 @@ public class PlayerMovementController : MonoBehaviour {
 	private Vector3 movementDirection = Vector3.zero;
 	
 	private PlayerStateManager stateManager;
-	private bool paralized;
+	private bool paralized = true;
 	
 	public AudioSource munchSound;
 	public AudioSource  stepSound;
@@ -28,7 +28,7 @@ public class PlayerMovementController : MonoBehaviour {
 	void Start() {
 		controller = GetComponent<CharacterController>();
 		initialYValue = transform.position.y;
-		paralized = true;
+		//paralized = true;
 		//munchSound = GetComponent<AudioSource>();
 	}
 	
@@ -39,12 +39,12 @@ public class PlayerMovementController : MonoBehaviour {
 	
 	private void UpdateStepSound(bool play)
 	{
-		if (play && ! stepSound.isPlaying)
+		if (play && ! stepSound.isPlaying && paralized)
 		{
 			stepSound.Play();
 		}
 		
-		if (! play && stepSound.isPlaying)
+		if ((! play || ! paralized) && stepSound.isPlaying)
 		{
 			stepSound.Stop();
 		}
@@ -53,8 +53,14 @@ public class PlayerMovementController : MonoBehaviour {
 	void HandleInput() {
 		bool isMoving = false;
 		float threshold = 0.3f;
-		if (Mathf.Abs(Input.GetAxis("Horizontal")) > threshold) {
-			movementDirection.x += Input.GetAxis("Horizontal") * Time.deltaTime * accelerationSpeed;
+		float deltaTime = Time.deltaTime;
+		
+		float hAxis = Input.GetAxis("Horizontal");
+		float vAxis = Input.GetAxis("Vertical");
+		
+		if (Mathf.Abs(hAxis) > threshold) 
+		{
+			movementDirection.x += hAxis * deltaTime * accelerationSpeed;
 			movementDirection.x = Mathf.Clamp(movementDirection.x, -movementSpeed, movementSpeed);
 			isMoving = true;
 		}
@@ -66,8 +72,9 @@ public class PlayerMovementController : MonoBehaviour {
 		else 
 			movementDirection.x = 0f;
 		
-		if (Mathf.Abs(Input.GetAxis("Vertical")) > threshold) {
-			movementDirection.z += Input.GetAxis("Vertical") * Time.deltaTime * accelerationSpeed;
+		if (Mathf.Abs(vAxis) > threshold) 
+		{
+			movementDirection.z += vAxis * deltaTime * accelerationSpeed;
 			movementDirection.z = Mathf.Clamp(movementDirection.z, -movementSpeed, movementSpeed);
 			isMoving = true;
 		}
@@ -76,13 +83,15 @@ public class PlayerMovementController : MonoBehaviour {
 			movementDirection.z *= friction;
 			isMoving = true;
 		}
-		else 
+		else
+		{
 			movementDirection.z = 0f;
-		
+		}
 		UpdateStepSound(isMoving);
 	}
 	
-	void ProcessMovement() {
+	void ProcessMovement() 
+	{
 		if (movementDirection.sqrMagnitude > movementSpeed * movementSpeed) {
 			movementDirection.Normalize();
 			movementDirection *= movementSpeed;
@@ -94,32 +103,39 @@ public class PlayerMovementController : MonoBehaviour {
 		controller.Move(movementDirection);
 	}
 	
-	void OnControllerColliderHit(ControllerColliderHit hit) {
-		if (hit.gameObject.CompareTag("RidingHood")) {
-			AudioSource.PlayClipAtPoint(munchSound.clip, transform.position);
-			stateManager.MetObject(HealthController.FoodType.RedHood);
-			hit.gameObject.SendMessage("OnKilled", SendMessageOptions.DontRequireReceiver);
-		}
+	void OnControllerColliderHit(ControllerColliderHit hit) 
+	{
+		GameObject collider = hit.gameObject;
 		
-		if (hit.gameObject.CompareTag("Hunter")) {
+		if (collider.CompareTag("RidingHood")) 
+		{
+			//AudioSource.PlayClipAtPoint(munchSound.clip, transform.position);
+			munchSound.Play();
+			stateManager.MetObject(HealthController.FoodType.RedHood);
+			collider.SendMessage("OnKilled", SendMessageOptions.DontRequireReceiver);
+		}
+		else
+		if (collider.CompareTag("Hunter")) {
 			if (stateManager.MetObject(HealthController.FoodType.Hunter)) {
-				AudioSource.PlayClipAtPoint(munchSound.clip, transform.position);
-				hit.gameObject.SendMessage("OnKilled", SendMessageOptions.DontRequireReceiver);
+				//AudioSource.PlayClipAtPoint(munchSound.clip, transform.position);
+				munchSound.Play();
+				collider.SendMessage("OnKilled", SendMessageOptions.DontRequireReceiver);
 			}
 			else {
 				//SendMessage("OnCollisionWithProjectile", SendMessageOptions.DontRequireReceiver);
 			}
 		}
-		
-		if (hit.gameObject.CompareTag("Granny")) {
-			AudioSource.PlayClipAtPoint(munchSound.clip, transform.position);
+		else
+		if (collider.CompareTag("Granny")) {
+			//AudioSource.PlayClipAtPoint(munchSound.clip, transform.position);
+			munchSound.Play();
 			stateManager.MetObject(HealthController.FoodType.Granny);
 			hit.gameObject.SendMessage("OnKilled", SendMessageOptions.DontRequireReceiver);
 		}
-		
-		if (hit.gameObject.CompareTag("Projectile")) {
-			print ("OMG! I'm hit!");	
-		}
+		//else
+		//if (collider.CompareTag("Projectile")) {
+		//	print ("OMG! I'm hit!");	
+		//}
     }
 	
 	void OnCollisionWithProjectile() {

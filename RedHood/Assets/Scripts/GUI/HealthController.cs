@@ -67,9 +67,9 @@ public class HealthController : MonoBehaviour {
 	
 	public void OnProjectile()
 	{
-		print ("HealthController: OnProjectile called, current progress is " + progress.getValue());
+		//print ("HealthController: OnProjectile called, current progress is " + progress.getValue());
 		progress.addValueToTimer(-0.33f);
-		print ("HealthController: OnProjectile called, the progress is " + progress.getValue() + " now");
+		//print ("HealthController: OnProjectile called, the progress is " + progress.getValue() + " now");
 		if (progress.getValue() <= 0f)
 		{
 			OnProgressTimerExpired();
