@@ -14,7 +14,7 @@ public class RidingHoodWanderingBehaviour : MonoBehaviour {
 		
 	}
 	
-	void Update () {
+	void FixedUpdate () {
 		pushTimer -= Time.deltaTime;
 		if (pushTimer < 0f) {
 			Vector3 pushDirection = Random.insideUnitSphere;

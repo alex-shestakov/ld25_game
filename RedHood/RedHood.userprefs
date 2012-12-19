@@ -1,13 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/AutoDestruction.cs">
-    <Files>
-      <File FileName="../../Rage Spline Test Project/Assets/animal cube assets/Scripts/Menus/UITK Buttons/UIToolkitGameMenu.cs" Line="78" Column="3" />
-      <File FileName="Assets/Plugins/UIToolkit/UIElements/UIButton.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Game/PlayerMovementController.cs" Line="110" Column="23" />
-      <File FileName="Assets/Scripts/Game/ProjectileCollisionHandler.cs" Line="21" Column="34" />
-      <File FileName="Assets/Scripts/Game/AutoDestruction.cs" Line="32" Column="3" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State />

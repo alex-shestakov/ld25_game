@@ -24,7 +24,22 @@ public class RidingHoodPanicBehaviour : MonoBehaviour {
 		}
 	}
 	
-	void Update () {
+	private IEnumerator forceAddTimer()
+	{
+		while (true)
+		{
+			if (targetTransform != null)
+			{
+				Vector3 fleeDirection = parentTransform.position - targetTransform.position;
+				fleeDirection.Normalize();
+				parentBody.AddForce(fleeDirection * fleeForce);
+			}
+			yield return new WaitForSeconds(0.1f);
+		}
+		yield break;
+	}
+	
+	/*void FixedUpdate () {
 		if (targetTransform == null)
 			return;
 		
@@ -32,12 +47,19 @@ public class RidingHoodPanicBehaviour : MonoBehaviour {
 		fleeDirection.Normalize();
 		parentBody.AddForce(fleeDirection * fleeForce);
 	}
-	
+	*/
 	void OnEnable() 
 	{
 		if (screamSound) {
 			screamSound.pitch = Random.Range(0.7f, 1.4f);
 			screamSound.Play();
 		}
+		
+		StartCoroutine("forceAddTimer");
+    }
+	
+	void OnDisable() 
+	{
+		StopCoroutine("forceAddTimer");
     }
 }

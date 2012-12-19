@@ -3,17 +3,16 @@ using System.Collections;
 
 public class PlayerMovementController : MonoBehaviour {
 	
-	public float movementSpeed = 1f;
+	public float maxMovementSpeed = 1f;
 	public float accelerationSpeed = 1f;
+	public float deccelerationSpeed = 1f;
 	public float friction = 0.6f;
-	
-	public float rotationSpeed = 1f;
-	
+		
 	public float bonusSpeedMultiplier = 1.6f;
 	
 	private float initialYValue;
 	private CharacterController controller;
-	private Vector3 movementDirection = Vector3.zero;
+	private Vector3 movementSpeed = Vector3.zero;
 	
 	private PlayerStateManager stateManager;
 	private bool paralized = true;
@@ -21,13 +20,23 @@ public class PlayerMovementController : MonoBehaviour {
 	public AudioSource munchSound;
 	public AudioSource  stepSound;
 	
+	private float paralizeRatio = 0.3f;
+	private float threshold = 0.3f;
+	
+	private float maxMovementSpeedSqr = 100.0f;
+	
 	void Awake() {
-		stateManager = GetComponent<PlayerStateManager>();		
+		stateManager = GetComponent<PlayerStateManager>();
+		maxMovementSpeed *= paralizeRatio;
+		accelerationSpeed *= paralizeRatio;
+		maxMovementSpeedSqr = maxMovementSpeed * maxMovementSpeed;
 	}
 	
 	void Start() {
 		controller = GetComponent<CharacterController>();
 		initialYValue = transform.position.y;
+		//movementSpeed = Vector3.zero;
+		
 		//paralized = true;
 		//munchSound = GetComponent<AudioSource>();
 	}
@@ -39,20 +48,19 @@ public class PlayerMovementController : MonoBehaviour {
 	
 	private void UpdateStepSound(bool play)
 	{
-		if (play && ! stepSound.isPlaying && paralized)
+		if (play && ! stepSound.isPlaying)
 		{
 			stepSound.Play();
 		}
 		
-		if ((! play || ! paralized) && stepSound.isPlaying)
+		if (! play && stepSound.isPlaying)
 		{
 			stepSound.Stop();
 		}
 	}
 	
-	void HandleInput() {
-		bool isMoving = false;
-		float threshold = 0.3f;
+	void HandleInput() 
+	{
 		float deltaTime = Time.deltaTime;
 		
 		float hAxis = Input.GetAxis("Horizontal");
@@ -60,47 +68,54 @@ public class PlayerMovementController : MonoBehaviour {
 		
 		if (Mathf.Abs(hAxis) > threshold) 
 		{
-			movementDirection.x += hAxis * deltaTime * accelerationSpeed;
-			movementDirection.x = Mathf.Clamp(movementDirection.x, -movementSpeed, movementSpeed);
-			isMoving = true;
+			movementSpeed.x += hAxis * deltaTime * accelerationSpeed;
+			movementSpeed.x = Mathf.Clamp(movementSpeed.x, -maxMovementSpeed, maxMovementSpeed);
 		}
-		else if (Mathf.Abs(movementDirection.x) > 0.05f)
+		else if (Mathf.Abs(movementSpeed.x) > 0.05f)
 		{
-			movementDirection.x *= friction;
-			isMoving = true;
+			if (movementSpeed.x < 0)
+				movementSpeed.x = Mathf.Min(0f, movementSpeed.x + deltaTime * deccelerationSpeed);
+			else
+				movementSpeed.x = Mathf.Max (0f, movementSpeed.x - deltaTime * deccelerationSpeed);
 		}
 		else 
-			movementDirection.x = 0f;
+			movementSpeed.x = 0f;
 		
 		if (Mathf.Abs(vAxis) > threshold) 
 		{
-			movementDirection.z += vAxis * deltaTime * accelerationSpeed;
-			movementDirection.z = Mathf.Clamp(movementDirection.z, -movementSpeed, movementSpeed);
-			isMoving = true;
+			movementSpeed.z += vAxis * deltaTime * accelerationSpeed;
+			movementSpeed.z = Mathf.Clamp(movementSpeed.z, -maxMovementSpeed, maxMovementSpeed);
 		}
-		else if (Mathf.Abs(movementDirection.z) > 0.05f)
+		else if (Mathf.Abs(movementSpeed.z) > 0.05f)
 		{
-			movementDirection.z *= friction;
-			isMoving = true;
+			if (movementSpeed.z < 0)
+				movementSpeed.z = Mathf.Min(0f, movementSpeed.z + deltaTime * deccelerationSpeed);
+			else
+				movementSpeed.z = Mathf.Max (0f, movementSpeed.z - deltaTime * deccelerationSpeed);
 		}
 		else
 		{
-			movementDirection.z = 0f;
+			movementSpeed.z = 0f;
 		}
-		UpdateStepSound(isMoving);
+		
+		if (paralized)
+		{
+			UpdateStepSound((movementSpeed.x == 0) && (movementSpeed.z == 0));
+		}
 	}
 	
 	void ProcessMovement() 
 	{
-		if (movementDirection.sqrMagnitude > movementSpeed * movementSpeed) {
-			movementDirection.Normalize();
-			movementDirection *= movementSpeed;
-		}
+		//if (movementSpeed.sqrMagnitude > maxMovementSpeedSqr) 
+		//{
+		//	movementSpeed.Normalize();
+		//	movementSpeed *= maxMovementSpeed;
+		//}
 		
-		if (paralized)
-			movementDirection *= 0.8f;
+		//movementSpeed *= (paralized ? paralizeRatio : 1.0f);
 		
-		controller.Move(movementDirection);
+		//print (movementSpeed);
+		controller.Move(movementSpeed * Time.deltaTime);
 	}
 	
 	void OnControllerColliderHit(ControllerColliderHit hit) 
@@ -143,14 +158,21 @@ public class PlayerMovementController : MonoBehaviour {
 	}
 	
 	void BonusActivated() {
-		movementSpeed *= bonusSpeedMultiplier;
+		maxMovementSpeed *= bonusSpeedMultiplier;
 	}
 	
 	void BonusDeactivated() {
-		movementSpeed /= bonusSpeedMultiplier;
+		maxMovementSpeed /= bonusSpeedMultiplier;
 	}
 	
 	void OnCountdownFinished () {
 		paralized = false;	
+		maxMovementSpeed /= paralizeRatio;
+		accelerationSpeed /= paralizeRatio;
+		
+		if (stepSound.isPlaying)
+		{
+			stepSound.Stop();
+		}
 	}
 }

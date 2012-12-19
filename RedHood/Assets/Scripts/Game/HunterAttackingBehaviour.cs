@@ -25,7 +25,8 @@ public class HunterAttackingBehaviour : MonoBehaviour {
 		reloadTimer = Random.value * reloadTime;
 	}
 	
-	void Update () {
+	void FixedUpdate () 
+	{
 		
 		if (targetTransform == null)
 			return;
@@ -44,8 +45,10 @@ public class HunterAttackingBehaviour : MonoBehaviour {
 			//AudioSource.PlayClipAtPoint(shotSound.clip, transform.position);
 			shotSound.Play();
 		}
-		else 
+		else
+		{
 			parentBody.AddForce(followDirection * followingForce);
+		}
 	}
 	
 	void OnTriggerEnter(Collider other) {
